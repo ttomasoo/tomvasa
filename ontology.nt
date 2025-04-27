@@ -1,0 +1,485 @@
+<http://www.example.org/stao#SmartTourismAdvisorOntology> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<http://www.example.org/stao#SmartTourismAdvisorOntology> <http://purl.org/dc/elements/1.1/creator> "Tomás Valero Sánchez" .
+<http://www.example.org/stao#SmartTourismAdvisorOntology> <http://purl.org/dc/terms/license> "https://creativecommons.org/licenses/by/4.0/" .
+<http://www.example.org/stao#SmartTourismAdvisorOntology> <http://www.w3.org/2000/01/rdf-schema#comment> "An ontology for representing tourism resources, events, hotels, transport, etc."@en .
+<http://www.example.org/stao#SmartTourismAdvisorOntology> <http://www.w3.org/2000/01/rdf-schema#comment> "Smart Tourism Advisor Ontology (STAO) is an ontology designed to represent and model city tourism offerings. STAO captures information about events, hotels, attractions, transportation, and restaurants for recommendation purposes. It integrates static data, such as resource descriptions, geographic locations, categories, prices, and ratings, with dynamic information like event dates, hotel availability, public transport prices, and tourist preferences." .
+<http://www.example.org/stao#SmartTourismAdvisorOntology> <http://www.w3.org/2000/01/rdf-schema#label> "Smart Tourism Advisor Ontology"@en .
+<http://www.example.org/stao#SmartTourismAdvisorOntology> <http://www.w3.org/2002/07/owl#versionInfo> "1.0 - 2025-04-27" .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Datatypes
+# #
+# #################################################################
+# 
+# 
+# http://www.w3.org/2001/XMLSchema#date
+<http://www.w3.org/2001/XMLSchema#date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://www.example.org/stao#hasEventType
+<http://www.example.org/stao#hasEventType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.example.org/stao#hasEventType> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.example.org/stao#Event> .
+<http://www.example.org/stao#hasEventType> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.example.org/stao#EventType> .
+<http://www.example.org/stao#hasEventType> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates an event to its event type (music, cultural, etc.)."@en .
+<http://www.example.org/stao#hasEventType> <http://www.w3.org/2000/01/rdf-schema#label> "hasEventType"@en .
+# 
+# http://www.example.org/stao#locatedIn
+<http://www.example.org/stao#locatedIn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.example.org/stao#locatedIn> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.example.org/stao#TourismResource> .
+<http://www.example.org/stao#locatedIn> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.example.org/stao#Place> .
+<http://www.example.org/stao#locatedIn> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a tourism resource to the place where it is located."@en .
+<http://www.example.org/stao#locatedIn> <http://www.w3.org/2000/01/rdf-schema#label> "locatedIn"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://www.example.org/stao#hasDate
+<http://www.example.org/stao#hasDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.example.org/stao#hasDate> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.example.org/stao#Event> .
+<http://www.example.org/stao#hasDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#date> .
+<http://www.example.org/stao#hasDate> <http://www.w3.org/2000/01/rdf-schema#comment> "The date on which the event is held (YYYY-MM-DD)."@en .
+<http://www.example.org/stao#hasDate> <http://www.w3.org/2000/01/rdf-schema#label> "hasDate"@en .
+# 
+# http://www.example.org/stao#hasName
+<http://www.example.org/stao#hasName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.example.org/stao#hasName> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/2002/07/owl#Thing> .
+<http://www.example.org/stao#hasName> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://www.example.org/stao#hasName> <http://www.w3.org/2000/01/rdf-schema#comment> "A name assigned to any entity in the ontology."@en .
+<http://www.example.org/stao#hasName> <http://www.w3.org/2000/01/rdf-schema#label> "hasName"@en .
+# 
+# http://www.example.org/stao#hasRating
+<http://www.example.org/stao#hasRating> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.example.org/stao#hasRating> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.example.org/stao#TourismResource> .
+<http://www.example.org/stao#hasRating> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#float> .
+<http://www.example.org/stao#hasRating> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the rating of a tourism resource."@en .
+<http://www.example.org/stao#hasRating> <http://www.w3.org/2000/01/rdf-schema#label> "hasRating"@en .
+# 
+# http://www.example.org/stao#hasStars
+<http://www.example.org/stao#hasStars> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.example.org/stao#hasStars> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.example.org/stao#Hotel> .
+<http://www.example.org/stao#hasStars> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<http://www.example.org/stao#hasStars> <http://www.w3.org/2000/01/rdf-schema#comment> "Number of stars for a hotel."@en .
+<http://www.example.org/stao#hasStars> <http://www.w3.org/2000/01/rdf-schema#label> "hasStars"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://dbpedia.org/ontology/City
+<http://dbpedia.org/ontology/City> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://dbpedia.org/ontology/City> <http://www.w3.org/2002/07/owl#equivalentClass> <http://www.example.org/stao#City> .
+# 
+# http://dbpedia.org/ontology/Restaurant
+<http://dbpedia.org/ontology/Restaurant> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://dbpedia.org/ontology/Restaurant> <http://www.w3.org/2002/07/owl#equivalentClass> <http://www.example.org/stao#Restaurant> .
+# 
+# http://www.example.org/stao#AndalusianCuisine
+<http://www.example.org/stao#AndalusianCuisine> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/stao#AndalusianCuisine> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/stao#CuisineType> .
+<http://www.example.org/stao#AndalusianCuisine> <http://www.w3.org/2000/01/rdf-schema#comment> "Andalusian cuisine type."@en .
+<http://www.example.org/stao#AndalusianCuisine> <http://www.w3.org/2000/01/rdf-schema#label> "AndalusianCuisine"@en .
+# 
+# http://www.example.org/stao#Attraction
+<http://www.example.org/stao#Attraction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/stao#Attraction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/stao#TourismResource> .
+<http://www.example.org/stao#Attraction> <http://www.w3.org/2000/01/rdf-schema#comment> "A tourist attraction (museum, monument...)."@en .
+<http://www.example.org/stao#Attraction> <http://www.w3.org/2000/01/rdf-schema#label> "Attraction"@en .
+# 
+# http://www.example.org/stao#AttractionType
+<http://www.example.org/stao#AttractionType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/stao#AttractionType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+<http://www.example.org/stao#AttractionType> <http://www.w3.org/2000/01/rdf-schema#comment> "Categorizes the kind of an attraction (Museum, Monument...)."@en .
+<http://www.example.org/stao#AttractionType> <http://www.w3.org/2000/01/rdf-schema#label> "AttractionType"@en .
+# 
+# http://www.example.org/stao#Beach
+<http://www.example.org/stao#Beach> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/stao#Beach> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/stao#AttractionType> .
+<http://www.example.org/stao#Beach> <http://www.w3.org/2000/01/rdf-schema#comment> "A type of attraction: Beach."@en .
+<http://www.example.org/stao#Beach> <http://www.w3.org/2000/01/rdf-schema#label> "Beach"@en .
+# 
+# http://www.example.org/stao#BeachHotel
+<http://www.example.org/stao#BeachHotel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/stao#BeachHotel> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/stao#HotelType> .
+<http://www.example.org/stao#BeachHotel> <http://www.w3.org/2000/01/rdf-schema#comment> "A hotel near or at the beach."@en .
+<http://www.example.org/stao#BeachHotel> <http://www.w3.org/2000/01/rdf-schema#label> "BeachHotel"@en .
+# 
+# http://www.example.org/stao#Bicycle
+<http://www.example.org/stao#Bicycle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/stao#Bicycle> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/stao#TransportMode> .
+<http://www.example.org/stao#Bicycle> <http://www.w3.org/2000/01/rdf-schema#comment> "Bicycle transport mode."@en .
+<http://www.example.org/stao#Bicycle> <http://www.w3.org/2000/01/rdf-schema#label> "Bicycle"@en .
+# 
+# http://www.example.org/stao#Bus
+<http://www.example.org/stao#Bus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/stao#Bus> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/stao#TransportMode> .
+<http://www.example.org/stao#Bus> <http://www.w3.org/2000/01/rdf-schema#comment> "Bus transport mode."@en .
+<http://www.example.org/stao#Bus> <http://www.w3.org/2000/01/rdf-schema#label> "Bus"@en .
+# 
+# http://www.example.org/stao#BusinessHotel
+<http://www.example.org/stao#BusinessHotel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/stao#BusinessHotel> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/stao#HotelType> .
+<http://www.example.org/stao#BusinessHotel> <http://www.w3.org/2000/01/rdf-schema#comment> "A hotel focused on business travelers."@en .
+<http://www.example.org/stao#BusinessHotel> <http://www.w3.org/2000/01/rdf-schema#label> "BusinessHotel"@en .
+# 
+# http://www.example.org/stao#City
+<http://www.example.org/stao#City> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/stao#City> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/stao#Place> .
+<http://www.example.org/stao#City> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents a city in the tourism ontology."@en .
+<http://www.example.org/stao#City> <http://www.w3.org/2000/01/rdf-schema#label> "City"@en .
+# 
+# http://www.example.org/stao#CuisineType
+<http://www.example.org/stao#CuisineType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/stao#CuisineType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+<http://www.example.org/stao#CuisineType> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents the cuisine type (Italian, Mexican...)."@en .
+<http://www.example.org/stao#CuisineType> <http://www.w3.org/2000/01/rdf-schema#label> "CuisineType"@en .
+# 
+# http://www.example.org/stao#CulturalAttraction
+<http://www.example.org/stao#CulturalAttraction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/stao#CulturalAttraction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/stao#AttractionType> .
+<http://www.example.org/stao#CulturalAttraction> <http://www.w3.org/2000/01/rdf-schema#comment> "A type of attraction: Cultural place."@en .
+<http://www.example.org/stao#CulturalAttraction> <http://www.w3.org/2000/01/rdf-schema#label> "CulturalAttraction"@en .
+# 
+# http://www.example.org/stao#CulturalEvent
+<http://www.example.org/stao#CulturalEvent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/stao#CulturalEvent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/stao#EventType> .
+<http://www.example.org/stao#CulturalEvent> <http://www.w3.org/2000/01/rdf-schema#comment> "Cultural event type."@en .
+<http://www.example.org/stao#CulturalEvent> <http://www.w3.org/2000/01/rdf-schema#label> "CulturalEvent"@en .
+# 
+# http://www.example.org/stao#Event
+<http://www.example.org/stao#Event> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/stao#Event> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/stao#TourismResource> .
+<http://www.example.org/stao#Event> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid1 .
+_:genid1 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid1 <http://www.w3.org/2002/07/owl#onProperty> <http://www.example.org/stao#hasDate> .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://www.example.org/stao#Event> <http://www.w3.org/2000/01/rdf-schema#comment> "An event happening in the city (cultural, music...)."@en .
+<http://www.example.org/stao#Event> <http://www.w3.org/2000/01/rdf-schema#label> "Event"@en .
+# 
+# http://www.example.org/stao#EventType
+<http://www.example.org/stao#EventType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/stao#EventType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+<http://www.example.org/stao#EventType> <http://www.w3.org/2000/01/rdf-schema#comment> "Categorizes the kind of event (Music, Cultural...)."@en .
+<http://www.example.org/stao#EventType> <http://www.w3.org/2000/01/rdf-schema#label> "EventType"@en .
+# 
+# http://www.example.org/stao#GastronomicEvent
+<http://www.example.org/stao#GastronomicEvent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/stao#GastronomicEvent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/stao#EventType> .
+<http://www.example.org/stao#GastronomicEvent> <http://www.w3.org/2000/01/rdf-schema#comment> "Gastronomic event type."@en .
+<http://www.example.org/stao#GastronomicEvent> <http://www.w3.org/2000/01/rdf-schema#label> "GastronomicEvent"@en .
+# 
+# http://www.example.org/stao#Hotel
+<http://www.example.org/stao#Hotel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/stao#Hotel> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/stao#TourismResource> .
+<http://www.example.org/stao#Hotel> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid2 .
+_:genid2 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid2 <http://www.w3.org/2002/07/owl#onProperty> <http://www.example.org/stao#hasStars> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://www.example.org/stao#Hotel> <http://www.w3.org/2000/01/rdf-schema#comment> "A hotel with stars, price, rating."@en .
+<http://www.example.org/stao#Hotel> <http://www.w3.org/2000/01/rdf-schema#label> "Hotel"@en .
+# 
+# http://www.example.org/stao#HotelType
+<http://www.example.org/stao#HotelType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/stao#HotelType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+<http://www.example.org/stao#HotelType> <http://www.w3.org/2000/01/rdf-schema#comment> "Categorizes the kind of hotel (Luxury, Beach...)."@en .
+<http://www.example.org/stao#HotelType> <http://www.w3.org/2000/01/rdf-schema#label> "HotelType"@en .
+# 
+# http://www.example.org/stao#ItalianCuisine
+<http://www.example.org/stao#ItalianCuisine> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/stao#ItalianCuisine> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/stao#CuisineType> .
+<http://www.example.org/stao#ItalianCuisine> <http://www.w3.org/2000/01/rdf-schema#comment> "Italian cuisine type."@en .
+<http://www.example.org/stao#ItalianCuisine> <http://www.w3.org/2000/01/rdf-schema#label> "ItalianCuisine"@en .
+# 
+# http://www.example.org/stao#JapaneseCuisine
+<http://www.example.org/stao#JapaneseCuisine> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/stao#JapaneseCuisine> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/stao#CuisineType> .
+<http://www.example.org/stao#JapaneseCuisine> <http://www.w3.org/2000/01/rdf-schema#comment> "Japanese cuisine type."@en .
+<http://www.example.org/stao#JapaneseCuisine> <http://www.w3.org/2000/01/rdf-schema#label> "JapaneseCuisine"@en .
+# 
+# http://www.example.org/stao#LowRatedRestaurant
+<http://www.example.org/stao#LowRatedRestaurant> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/stao#LowRatedRestaurant> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/stao#Restaurant> .
+<http://www.example.org/stao#LowRatedRestaurant> <http://www.w3.org/2000/01/rdf-schema#comment> "A restaurant with rating below 3.0"@en .
+<http://www.example.org/stao#LowRatedRestaurant> <http://www.w3.org/2000/01/rdf-schema#label> "LowRatedRestaurant"@en .
+# 
+# http://www.example.org/stao#LuxuryHotel
+<http://www.example.org/stao#LuxuryHotel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/stao#LuxuryHotel> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/stao#HotelType> .
+<http://www.example.org/stao#LuxuryHotel> <http://www.w3.org/2000/01/rdf-schema#comment> "A hotel that is categorized as luxury."@en .
+<http://www.example.org/stao#LuxuryHotel> <http://www.w3.org/2000/01/rdf-schema#label> "LuxuryHotel"@en .
+# 
+# http://www.example.org/stao#MediterraneanCuisine
+<http://www.example.org/stao#MediterraneanCuisine> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/stao#MediterraneanCuisine> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/stao#CuisineType> .
+<http://www.example.org/stao#MediterraneanCuisine> <http://www.w3.org/2000/01/rdf-schema#comment> "Mediterranean cuisine type."@en .
+<http://www.example.org/stao#MediterraneanCuisine> <http://www.w3.org/2000/01/rdf-schema#label> "MediterraneanCuisine"@en .
+# 
+# http://www.example.org/stao#Metro
+<http://www.example.org/stao#Metro> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/stao#Metro> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/stao#TransportMode> .
+<http://www.example.org/stao#Metro> <http://www.w3.org/2000/01/rdf-schema#comment> "Metro transport mode."@en .
+<http://www.example.org/stao#Metro> <http://www.w3.org/2000/01/rdf-schema#label> "Metro"@en .
+# 
+# http://www.example.org/stao#MexicanCuisine
+<http://www.example.org/stao#MexicanCuisine> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/stao#MexicanCuisine> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/stao#CuisineType> .
+<http://www.example.org/stao#MexicanCuisine> <http://www.w3.org/2000/01/rdf-schema#comment> "Mexican cuisine type."@en .
+<http://www.example.org/stao#MexicanCuisine> <http://www.w3.org/2000/01/rdf-schema#label> "MexicanCuisine"@en .
+# 
+# http://www.example.org/stao#Monument
+<http://www.example.org/stao#Monument> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/stao#Monument> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/stao#AttractionType> .
+<http://www.example.org/stao#Monument> <http://www.w3.org/2000/01/rdf-schema#comment> "A type of attraction: Monument."@en .
+<http://www.example.org/stao#Monument> <http://www.w3.org/2000/01/rdf-schema#label> "Monument"@en .
+# 
+# http://www.example.org/stao#Museum
+<http://www.example.org/stao#Museum> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/stao#Museum> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/stao#AttractionType> .
+<http://www.example.org/stao#Museum> <http://www.w3.org/2000/01/rdf-schema#comment> "A type of attraction: Museum."@en .
+<http://www.example.org/stao#Museum> <http://www.w3.org/2000/01/rdf-schema#label> "Museum"@en .
+# 
+# http://www.example.org/stao#MusicEvent
+<http://www.example.org/stao#MusicEvent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/stao#MusicEvent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/stao#EventType> .
+# 
+# http://www.example.org/stao#Park
+<http://www.example.org/stao#Park> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/stao#Park> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/stao#AttractionType> .
+<http://www.example.org/stao#Park> <http://www.w3.org/2000/01/rdf-schema#comment> "A type of attraction: Park."@en .
+<http://www.example.org/stao#Park> <http://www.w3.org/2000/01/rdf-schema#label> "Park"@en .
+# 
+# http://www.example.org/stao#Place
+<http://www.example.org/stao#Place> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/stao#Place> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+<http://www.example.org/stao#Place> <http://www.w3.org/2000/01/rdf-schema#comment> "A geographical place (e.g., city)."@en .
+<http://www.example.org/stao#Place> <http://www.w3.org/2000/01/rdf-schema#label> "Place"@en .
+# 
+# http://www.example.org/stao#Restaurant
+<http://www.example.org/stao#Restaurant> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/stao#Restaurant> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/stao#TourismResource> .
+<http://www.example.org/stao#Restaurant> <http://www.w3.org/2000/01/rdf-schema#comment> "A place to eat with an average price and rating."@en .
+<http://www.example.org/stao#Restaurant> <http://www.w3.org/2000/01/rdf-schema#label> "Restaurant"@en .
+# 
+# http://www.example.org/stao#RuralHotel
+<http://www.example.org/stao#RuralHotel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/stao#RuralHotel> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/stao#HotelType> .
+<http://www.example.org/stao#RuralHotel> <http://www.w3.org/2000/01/rdf-schema#comment> "A hotel in a rural location."@en .
+<http://www.example.org/stao#RuralHotel> <http://www.w3.org/2000/01/rdf-schema#label> "RuralHotel"@en .
+# 
+# http://www.example.org/stao#SportEvent
+<http://www.example.org/stao#SportEvent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/stao#SportEvent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/stao#EventType> .
+<http://www.example.org/stao#SportEvent> <http://www.w3.org/2000/01/rdf-schema#comment> "Sport event type."@en .
+<http://www.example.org/stao#SportEvent> <http://www.w3.org/2000/01/rdf-schema#label> "SportEvent"@en .
+# 
+# http://www.example.org/stao#Taxi
+<http://www.example.org/stao#Taxi> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/stao#Taxi> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/stao#TransportMode> .
+<http://www.example.org/stao#Taxi> <http://www.w3.org/2000/01/rdf-schema#comment> "Taxi transport mode."@en .
+<http://www.example.org/stao#Taxi> <http://www.w3.org/2000/01/rdf-schema#label> "Taxi"@en .
+# 
+# http://www.example.org/stao#TechnologicEvent
+<http://www.example.org/stao#TechnologicEvent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/stao#TechnologicEvent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/stao#EventType> .
+<http://www.example.org/stao#TechnologicEvent> <http://www.w3.org/2000/01/rdf-schema#comment> "Technologic event type."@en .
+<http://www.example.org/stao#TechnologicEvent> <http://www.w3.org/2000/01/rdf-schema#label> "TechnologicEvent"@en .
+# 
+# http://www.example.org/stao#TopHotel
+<http://www.example.org/stao#TopHotel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/stao#TopHotel> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/stao#Hotel> .
+<http://www.example.org/stao#TopHotel> <http://www.w3.org/2000/01/rdf-schema#comment> "A hotel with rating > 4.8"@en .
+<http://www.example.org/stao#TopHotel> <http://www.w3.org/2000/01/rdf-schema#label> "TopHotel"@en .
+# 
+# http://www.example.org/stao#TourismResource
+<http://www.example.org/stao#TourismResource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/stao#TourismResource> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+<http://www.example.org/stao#TourismResource> <http://www.w3.org/2000/01/rdf-schema#comment> "A general resource for tourism (e.g., hotels, restaurants...)."@en .
+<http://www.example.org/stao#TourismResource> <http://www.w3.org/2000/01/rdf-schema#label> "TourismResource"@en .
+# 
+# http://www.example.org/stao#Tram
+<http://www.example.org/stao#Tram> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/stao#Tram> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/stao#TransportMode> .
+<http://www.example.org/stao#Tram> <http://www.w3.org/2000/01/rdf-schema#comment> "Tram transport mode."@en .
+<http://www.example.org/stao#Tram> <http://www.w3.org/2000/01/rdf-schema#label> "Tram"@en .
+# 
+# http://www.example.org/stao#TransportMode
+<http://www.example.org/stao#TransportMode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/stao#TransportMode> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+<http://www.example.org/stao#TransportMode> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the transport mode (Bus, Metro, etc.)."@en .
+<http://www.example.org/stao#TransportMode> <http://www.w3.org/2000/01/rdf-schema#label> "TransportMode"@en .
+# 
+# http://www.example.org/stao#TransportService
+<http://www.example.org/stao#TransportService> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/stao#TransportService> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/stao#TourismResource> .
+<http://www.example.org/stao#TransportService> <http://www.w3.org/2000/01/rdf-schema#comment> "A service of transport in a city (bus, metro...)."@en .
+<http://www.example.org/stao#TransportService> <http://www.w3.org/2000/01/rdf-schema#label> "TransportService"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://dbpedia.org/resource/Toledo
+<http://dbpedia.org/resource/Toledo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://dbpedia.org/resource/Toledo> <http://www.w3.org/2002/07/owl#sameAs> <http://www.example.org/stao#Toledo> .
+# 
+# http://www.example.org/stao#Toledo
+# 
+# http://www.example.org/stao#Castillo_Toledo
+<http://www.example.org/stao#Castillo_Toledo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.example.org/stao#Castillo_Toledo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.example.org/stao#Attraction> .
+<http://www.example.org/stao#Castillo_Toledo> <http://www.example.org/stao#locatedIn> <http://www.example.org/stao#Toledo> .
+<http://www.example.org/stao#Castillo_Toledo> <http://www.example.org/stao#hasName> "Castillo Toledo" .
+<http://www.example.org/stao#Castillo_Toledo> <http://www.example.org/stao#hasRating> "3.7"^^<http://www.w3.org/2001/XMLSchema#float> .
+<http://www.example.org/stao#Castillo_Toledo> <http://www.w3.org/2000/01/rdf-schema#comment> "A castle attraction in Toledo"@en .
+<http://www.example.org/stao#Castillo_Toledo> <http://www.w3.org/2000/01/rdf-schema#label> "Castillo_Toledo"@en .
+# 
+# http://www.example.org/stao#Concierto_Toledo_2024_02_06
+<http://www.example.org/stao#Concierto_Toledo_2024_02_06> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.example.org/stao#Concierto_Toledo_2024_02_06> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.example.org/stao#Event> .
+<http://www.example.org/stao#Concierto_Toledo_2024_02_06> <http://www.example.org/stao#hasEventType> <http://www.example.org/stao#MusicEvent> .
+<http://www.example.org/stao#Concierto_Toledo_2024_02_06> <http://www.example.org/stao#locatedIn> <http://www.example.org/stao#Toledo> .
+<http://www.example.org/stao#Concierto_Toledo_2024_02_06> <http://www.example.org/stao#hasDate> "2024-02-06"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://www.example.org/stao#Concierto_Toledo_2024_02_06> <http://www.example.org/stao#hasName> "Concierto Toledo" .
+<http://www.example.org/stao#Concierto_Toledo_2024_02_06> <http://www.example.org/stao#hasRating> "4.8"^^<http://www.w3.org/2001/XMLSchema#float> .
+<http://www.example.org/stao#Concierto_Toledo_2024_02_06> <http://www.w3.org/2000/01/rdf-schema#comment> "Music event in Toledo on 2024-02-06"@en .
+<http://www.example.org/stao#Concierto_Toledo_2024_02_06> <http://www.w3.org/2000/01/rdf-schema#label> "Concierto_Toledo_2024_02_06"@en .
+# 
+# http://www.example.org/stao#Hotel_Del_Mar_Toledo
+<http://www.example.org/stao#Hotel_Del_Mar_Toledo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.example.org/stao#Hotel_Del_Mar_Toledo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.example.org/stao#Hotel> .
+<http://www.example.org/stao#Hotel_Del_Mar_Toledo> <http://www.example.org/stao#locatedIn> <http://www.example.org/stao#Toledo> .
+<http://www.example.org/stao#Hotel_Del_Mar_Toledo> <http://www.example.org/stao#hasName> "Hotel Del Mar Toledo" .
+<http://www.example.org/stao#Hotel_Del_Mar_Toledo> <http://www.example.org/stao#hasRating> "4.3"^^<http://www.w3.org/2001/XMLSchema#float> .
+<http://www.example.org/stao#Hotel_Del_Mar_Toledo> <http://www.example.org/stao#hasStars> "5"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<http://www.example.org/stao#Hotel_Del_Mar_Toledo> <http://www.w3.org/2000/01/rdf-schema#comment> "A 5-star beach hotel in Toledo from the CSV"@en .
+<http://www.example.org/stao#Hotel_Del_Mar_Toledo> <http://www.w3.org/2000/01/rdf-schema#label> "Hotel_Del_Mar_Toledo"@en .
+# 
+# http://www.example.org/stao#MusicEvent
+<http://www.example.org/stao#MusicEvent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# http://www.example.org/stao#Restaurante_Tradicion_Toledo
+<http://www.example.org/stao#Restaurante_Tradicion_Toledo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.example.org/stao#Restaurante_Tradicion_Toledo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.example.org/stao#Restaurant> .
+<http://www.example.org/stao#Restaurante_Tradicion_Toledo> <http://www.example.org/stao#locatedIn> <http://www.example.org/stao#Toledo> .
+<http://www.example.org/stao#Restaurante_Tradicion_Toledo> <http://www.example.org/stao#hasName> "Restaurante Tradición Toledo" .
+<http://www.example.org/stao#Restaurante_Tradicion_Toledo> <http://www.example.org/stao#hasRating> "3.7"^^<http://www.w3.org/2001/XMLSchema#float> .
+<http://www.example.org/stao#Restaurante_Tradicion_Toledo> <http://www.w3.org/2000/01/rdf-schema#comment> "A restaurant in Toledo with a rating of 3.7"@en .
+<http://www.example.org/stao#Restaurante_Tradicion_Toledo> <http://www.w3.org/2000/01/rdf-schema#label> "Restaurante_Tradicion_Toledo"@en .
+# 
+# http://www.example.org/stao#Toledo
+<http://www.example.org/stao#Toledo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.example.org/stao#Toledo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.example.org/stao#City> .
+<http://www.example.org/stao#Toledo> <http://www.example.org/stao#hasName> "Toledo" .
+<http://www.example.org/stao#Toledo> <http://www.example.org/stao#hasRating> "4.0"^^<http://www.w3.org/2001/XMLSchema#float> .
+<http://www.example.org/stao#Toledo> <http://www.w3.org/2000/01/rdf-schema#comment> "The city of Toledo in Spain."@en .
+<http://www.example.org/stao#Toledo> <http://www.w3.org/2000/01/rdf-schema#label> "Toledo"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Annotations
+# #
+# #################################################################
+# 
+# 
+<http://www.example.org/stao#MusicEvent> <http://www.w3.org/2000/01/rdf-schema#comment> "Music event type."@en .
+<http://www.example.org/stao#MusicEvent> <http://www.w3.org/2000/01/rdf-schema#label> "MusicEvent"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Rules
+# #
+# #################################################################
+# 
+# 
+<urn:swrl:var#h> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#Variable> .
+<urn:swrl:var#res> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#Variable> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#Imp> .
+_:genid13 <http://www.w3.org/2003/11/swrl#body> _:genid14 .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid15 .
+_:genid15 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#res> .
+_:genid15 <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.example.org/stao#LowRatedRestaurant> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#ClassAtom> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid13 <http://www.w3.org/2003/11/swrl#head> _:genid16 .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid17 .
+_:genid17 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#res> .
+_:genid17 <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.example.org/stao#Restaurant> .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#ClassAtom> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#Imp> .
+_:genid3 <http://www.w3.org/2003/11/swrl#body> _:genid4 .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid5 .
+_:genid5 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#h> .
+_:genid5 <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.example.org/stao#LuxuryHotel> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#ClassAtom> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid3 <http://www.w3.org/2003/11/swrl#head> _:genid6 .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid7 .
+_:genid7 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#h> .
+_:genid7 <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.example.org/stao#Hotel> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#ClassAtom> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#Imp> .
+_:genid8 <http://www.w3.org/2003/11/swrl#body> _:genid9 .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid10 .
+_:genid10 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#h> .
+_:genid10 <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.example.org/stao#TopHotel> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#ClassAtom> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid8 <http://www.w3.org/2003/11/swrl#head> _:genid11 .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid12 .
+_:genid12 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#h> .
+_:genid12 <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.example.org/stao#Hotel> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#ClassAtom> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

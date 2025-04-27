@@ -1,0 +1,866 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.example.org/stao#SmartTourismAdvisorOntology#"
+     xml:base="http://www.example.org/stao#SmartTourismAdvisorOntology"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:stao="http://www.example.org/stao#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:terms="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="http://www.example.org/stao#SmartTourismAdvisorOntology">
+        <dc:creator>Tomás Valero Sánchez</dc:creator>
+        <terms:license>https://creativecommons.org/licenses/by/4.0/</terms:license>
+        <rdfs:comment xml:lang="en">An ontology for representing tourism resources, events, hotels, transport, etc.</rdfs:comment>
+        <rdfs:comment>Smart Tourism Advisor Ontology (STAO) is an ontology designed to represent and model city tourism offerings. STAO captures information about events, hotels, attractions, transportation, and restaurants for recommendation purposes. It integrates static data, such as resource descriptions, geographic locations, categories, prices, and ratings, with dynamic information like event dates, hotel availability, public transport prices, and tourist preferences.</rdfs:comment>
+        <rdfs:label xml:lang="en">Smart Tourism Advisor Ontology</rdfs:label>
+        <owl:versionInfo>1.0 - 2025-04-27</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.example.org/stao#hasEventType -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.example.org/stao#hasEventType">
+        <rdfs:domain rdf:resource="http://www.example.org/stao#Event"/>
+        <rdfs:range rdf:resource="http://www.example.org/stao#EventType"/>
+        <rdfs:comment xml:lang="en">Relates an event to its event type (music, cultural, etc.).</rdfs:comment>
+        <rdfs:label xml:lang="en">hasEventType</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.org/stao#locatedIn -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.example.org/stao#locatedIn">
+        <rdfs:domain rdf:resource="http://www.example.org/stao#TourismResource"/>
+        <rdfs:range rdf:resource="http://www.example.org/stao#Place"/>
+        <rdfs:comment xml:lang="en">Relates a tourism resource to the place where it is located.</rdfs:comment>
+        <rdfs:label xml:lang="en">locatedIn</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.example.org/stao#hasDate -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.example.org/stao#hasDate">
+        <rdfs:domain rdf:resource="http://www.example.org/stao#Event"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+        <rdfs:comment xml:lang="en">The date on which the event is held (YYYY-MM-DD).</rdfs:comment>
+        <rdfs:label xml:lang="en">hasDate</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.example.org/stao#hasName -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.example.org/stao#hasName">
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">A name assigned to any entity in the ontology.</rdfs:comment>
+        <rdfs:label xml:lang="en">hasName</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.example.org/stao#hasRating -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.example.org/stao#hasRating">
+        <rdfs:domain rdf:resource="http://www.example.org/stao#TourismResource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="en">Indicates the rating of a tourism resource.</rdfs:comment>
+        <rdfs:label xml:lang="en">hasRating</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.example.org/stao#hasStars -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.example.org/stao#hasStars">
+        <rdfs:domain rdf:resource="http://www.example.org/stao#Hotel"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="en">Number of stars for a hotel.</rdfs:comment>
+        <rdfs:label xml:lang="en">hasStars</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://dbpedia.org/ontology/City -->
+
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/City">
+        <owl:equivalentClass rdf:resource="http://www.example.org/stao#City"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Restaurant -->
+
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Restaurant">
+        <owl:equivalentClass rdf:resource="http://www.example.org/stao#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/stao#AndalusianCuisine -->
+
+
+    <owl:Class rdf:about="http://www.example.org/stao#AndalusianCuisine">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/stao#CuisineType"/>
+        <rdfs:comment xml:lang="en">Andalusian cuisine type.</rdfs:comment>
+        <rdfs:label xml:lang="en">AndalusianCuisine</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/stao#Attraction -->
+
+
+    <owl:Class rdf:about="http://www.example.org/stao#Attraction">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/stao#TourismResource"/>
+        <rdfs:comment xml:lang="en">A tourist attraction (museum, monument...).</rdfs:comment>
+        <rdfs:label xml:lang="en">Attraction</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/stao#AttractionType -->
+
+
+    <owl:Class rdf:about="http://www.example.org/stao#AttractionType">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment xml:lang="en">Categorizes the kind of an attraction (Museum, Monument...).</rdfs:comment>
+        <rdfs:label xml:lang="en">AttractionType</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/stao#Beach -->
+
+
+    <owl:Class rdf:about="http://www.example.org/stao#Beach">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/stao#AttractionType"/>
+        <rdfs:comment xml:lang="en">A type of attraction: Beach.</rdfs:comment>
+        <rdfs:label xml:lang="en">Beach</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/stao#BeachHotel -->
+
+
+    <owl:Class rdf:about="http://www.example.org/stao#BeachHotel">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/stao#HotelType"/>
+        <rdfs:comment xml:lang="en">A hotel near or at the beach.</rdfs:comment>
+        <rdfs:label xml:lang="en">BeachHotel</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/stao#Bicycle -->
+
+
+    <owl:Class rdf:about="http://www.example.org/stao#Bicycle">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/stao#TransportMode"/>
+        <rdfs:comment xml:lang="en">Bicycle transport mode.</rdfs:comment>
+        <rdfs:label xml:lang="en">Bicycle</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/stao#Bus -->
+
+
+    <owl:Class rdf:about="http://www.example.org/stao#Bus">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/stao#TransportMode"/>
+        <rdfs:comment xml:lang="en">Bus transport mode.</rdfs:comment>
+        <rdfs:label xml:lang="en">Bus</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/stao#BusinessHotel -->
+
+
+    <owl:Class rdf:about="http://www.example.org/stao#BusinessHotel">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/stao#HotelType"/>
+        <rdfs:comment xml:lang="en">A hotel focused on business travelers.</rdfs:comment>
+        <rdfs:label xml:lang="en">BusinessHotel</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/stao#City -->
+
+
+    <owl:Class rdf:about="http://www.example.org/stao#City">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/stao#Place"/>
+        <rdfs:comment xml:lang="en">Represents a city in the tourism ontology.</rdfs:comment>
+        <rdfs:label xml:lang="en">City</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/stao#CuisineType -->
+
+
+    <owl:Class rdf:about="http://www.example.org/stao#CuisineType">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment xml:lang="en">Represents the cuisine type (Italian, Mexican...).</rdfs:comment>
+        <rdfs:label xml:lang="en">CuisineType</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/stao#CulturalAttraction -->
+
+
+    <owl:Class rdf:about="http://www.example.org/stao#CulturalAttraction">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/stao#AttractionType"/>
+        <rdfs:comment xml:lang="en">A type of attraction: Cultural place.</rdfs:comment>
+        <rdfs:label xml:lang="en">CulturalAttraction</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/stao#CulturalEvent -->
+
+
+    <owl:Class rdf:about="http://www.example.org/stao#CulturalEvent">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/stao#EventType"/>
+        <rdfs:comment xml:lang="en">Cultural event type.</rdfs:comment>
+        <rdfs:label xml:lang="en">CulturalEvent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/stao#Event -->
+
+
+    <owl:Class rdf:about="http://www.example.org/stao#Event">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/stao#TourismResource"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.example.org/stao#hasDate"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">An event happening in the city (cultural, music...).</rdfs:comment>
+        <rdfs:label xml:lang="en">Event</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/stao#EventType -->
+
+
+    <owl:Class rdf:about="http://www.example.org/stao#EventType">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment xml:lang="en">Categorizes the kind of event (Music, Cultural...).</rdfs:comment>
+        <rdfs:label xml:lang="en">EventType</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/stao#GastronomicEvent -->
+
+
+    <owl:Class rdf:about="http://www.example.org/stao#GastronomicEvent">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/stao#EventType"/>
+        <rdfs:comment xml:lang="en">Gastronomic event type.</rdfs:comment>
+        <rdfs:label xml:lang="en">GastronomicEvent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/stao#Hotel -->
+
+
+    <owl:Class rdf:about="http://www.example.org/stao#Hotel">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/stao#TourismResource"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.example.org/stao#hasStars"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A hotel with stars, price, rating.</rdfs:comment>
+        <rdfs:label xml:lang="en">Hotel</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/stao#HotelType -->
+
+
+    <owl:Class rdf:about="http://www.example.org/stao#HotelType">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment xml:lang="en">Categorizes the kind of hotel (Luxury, Beach...).</rdfs:comment>
+        <rdfs:label xml:lang="en">HotelType</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/stao#ItalianCuisine -->
+
+
+    <owl:Class rdf:about="http://www.example.org/stao#ItalianCuisine">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/stao#CuisineType"/>
+        <rdfs:comment xml:lang="en">Italian cuisine type.</rdfs:comment>
+        <rdfs:label xml:lang="en">ItalianCuisine</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/stao#JapaneseCuisine -->
+
+
+    <owl:Class rdf:about="http://www.example.org/stao#JapaneseCuisine">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/stao#CuisineType"/>
+        <rdfs:comment xml:lang="en">Japanese cuisine type.</rdfs:comment>
+        <rdfs:label xml:lang="en">JapaneseCuisine</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/stao#LowRatedRestaurant -->
+
+
+    <owl:Class rdf:about="http://www.example.org/stao#LowRatedRestaurant">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/stao#Restaurant"/>
+        <rdfs:comment xml:lang="en">A restaurant with rating below 3.0</rdfs:comment>
+        <rdfs:label xml:lang="en">LowRatedRestaurant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/stao#LuxuryHotel -->
+
+
+    <owl:Class rdf:about="http://www.example.org/stao#LuxuryHotel">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/stao#HotelType"/>
+        <rdfs:comment xml:lang="en">A hotel that is categorized as luxury.</rdfs:comment>
+        <rdfs:label xml:lang="en">LuxuryHotel</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/stao#MediterraneanCuisine -->
+
+
+    <owl:Class rdf:about="http://www.example.org/stao#MediterraneanCuisine">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/stao#CuisineType"/>
+        <rdfs:comment xml:lang="en">Mediterranean cuisine type.</rdfs:comment>
+        <rdfs:label xml:lang="en">MediterraneanCuisine</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/stao#Metro -->
+
+
+    <owl:Class rdf:about="http://www.example.org/stao#Metro">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/stao#TransportMode"/>
+        <rdfs:comment xml:lang="en">Metro transport mode.</rdfs:comment>
+        <rdfs:label xml:lang="en">Metro</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/stao#MexicanCuisine -->
+
+
+    <owl:Class rdf:about="http://www.example.org/stao#MexicanCuisine">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/stao#CuisineType"/>
+        <rdfs:comment xml:lang="en">Mexican cuisine type.</rdfs:comment>
+        <rdfs:label xml:lang="en">MexicanCuisine</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/stao#Monument -->
+
+
+    <owl:Class rdf:about="http://www.example.org/stao#Monument">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/stao#AttractionType"/>
+        <rdfs:comment xml:lang="en">A type of attraction: Monument.</rdfs:comment>
+        <rdfs:label xml:lang="en">Monument</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/stao#Museum -->
+
+
+    <owl:Class rdf:about="http://www.example.org/stao#Museum">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/stao#AttractionType"/>
+        <rdfs:comment xml:lang="en">A type of attraction: Museum.</rdfs:comment>
+        <rdfs:label xml:lang="en">Museum</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/stao#MusicEvent -->
+
+
+    <owl:Class rdf:about="http://www.example.org/stao#MusicEvent">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/stao#EventType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/stao#Park -->
+
+
+    <owl:Class rdf:about="http://www.example.org/stao#Park">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/stao#AttractionType"/>
+        <rdfs:comment xml:lang="en">A type of attraction: Park.</rdfs:comment>
+        <rdfs:label xml:lang="en">Park</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/stao#Place -->
+
+
+    <owl:Class rdf:about="http://www.example.org/stao#Place">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment xml:lang="en">A geographical place (e.g., city).</rdfs:comment>
+        <rdfs:label xml:lang="en">Place</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/stao#Restaurant -->
+
+
+    <owl:Class rdf:about="http://www.example.org/stao#Restaurant">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/stao#TourismResource"/>
+        <rdfs:comment xml:lang="en">A place to eat with an average price and rating.</rdfs:comment>
+        <rdfs:label xml:lang="en">Restaurant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/stao#RuralHotel -->
+
+
+    <owl:Class rdf:about="http://www.example.org/stao#RuralHotel">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/stao#HotelType"/>
+        <rdfs:comment xml:lang="en">A hotel in a rural location.</rdfs:comment>
+        <rdfs:label xml:lang="en">RuralHotel</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/stao#SportEvent -->
+
+
+    <owl:Class rdf:about="http://www.example.org/stao#SportEvent">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/stao#EventType"/>
+        <rdfs:comment xml:lang="en">Sport event type.</rdfs:comment>
+        <rdfs:label xml:lang="en">SportEvent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/stao#Taxi -->
+
+
+    <owl:Class rdf:about="http://www.example.org/stao#Taxi">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/stao#TransportMode"/>
+        <rdfs:comment xml:lang="en">Taxi transport mode.</rdfs:comment>
+        <rdfs:label xml:lang="en">Taxi</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/stao#TechnologicEvent -->
+
+
+    <owl:Class rdf:about="http://www.example.org/stao#TechnologicEvent">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/stao#EventType"/>
+        <rdfs:comment xml:lang="en">Technologic event type.</rdfs:comment>
+        <rdfs:label xml:lang="en">TechnologicEvent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/stao#TopHotel -->
+
+
+    <owl:Class rdf:about="http://www.example.org/stao#TopHotel">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/stao#Hotel"/>
+        <rdfs:comment xml:lang="en">A hotel with rating &gt; 4.8</rdfs:comment>
+        <rdfs:label xml:lang="en">TopHotel</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/stao#TourismResource -->
+
+
+    <owl:Class rdf:about="http://www.example.org/stao#TourismResource">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment xml:lang="en">A general resource for tourism (e.g., hotels, restaurants...).</rdfs:comment>
+        <rdfs:label xml:lang="en">TourismResource</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/stao#Tram -->
+
+
+    <owl:Class rdf:about="http://www.example.org/stao#Tram">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/stao#TransportMode"/>
+        <rdfs:comment xml:lang="en">Tram transport mode.</rdfs:comment>
+        <rdfs:label xml:lang="en">Tram</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/stao#TransportMode -->
+
+
+    <owl:Class rdf:about="http://www.example.org/stao#TransportMode">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment xml:lang="en">Indicates the transport mode (Bus, Metro, etc.).</rdfs:comment>
+        <rdfs:label xml:lang="en">TransportMode</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/stao#TransportService -->
+
+
+    <owl:Class rdf:about="http://www.example.org/stao#TransportService">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/stao#TourismResource"/>
+        <rdfs:comment xml:lang="en">A service of transport in a city (bus, metro...).</rdfs:comment>
+        <rdfs:label xml:lang="en">TransportService</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://dbpedia.org/resource/Toledo -->
+
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Toledo">
+        <owl:sameAs rdf:resource="http://www.example.org/stao#Toledo"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/stao#Toledo -->
+
+
+    <rdf:Description rdf:about="http://www.example.org/stao#Toledo"/>
+    
+
+
+    <!-- http://www.example.org/stao#Castillo_Toledo -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/stao#Castillo_Toledo">
+        <rdf:type rdf:resource="http://www.example.org/stao#Attraction"/>
+        <stao:locatedIn rdf:resource="http://www.example.org/stao#Toledo"/>
+        <stao:hasName>Castillo Toledo</stao:hasName>
+        <stao:hasRating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">3.7</stao:hasRating>
+        <rdfs:comment xml:lang="en">A castle attraction in Toledo</rdfs:comment>
+        <rdfs:label xml:lang="en">Castillo_Toledo</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/stao#Concierto_Toledo_2024_02_06 -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/stao#Concierto_Toledo_2024_02_06">
+        <rdf:type rdf:resource="http://www.example.org/stao#Event"/>
+        <stao:hasEventType rdf:resource="http://www.example.org/stao#MusicEvent"/>
+        <stao:locatedIn rdf:resource="http://www.example.org/stao#Toledo"/>
+        <stao:hasDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-02-06</stao:hasDate>
+        <stao:hasName>Concierto Toledo</stao:hasName>
+        <stao:hasRating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">4.8</stao:hasRating>
+        <rdfs:comment xml:lang="en">Music event in Toledo on 2024-02-06</rdfs:comment>
+        <rdfs:label xml:lang="en">Concierto_Toledo_2024_02_06</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/stao#Hotel_Del_Mar_Toledo -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/stao#Hotel_Del_Mar_Toledo">
+        <rdf:type rdf:resource="http://www.example.org/stao#Hotel"/>
+        <stao:locatedIn rdf:resource="http://www.example.org/stao#Toledo"/>
+        <stao:hasName>Hotel Del Mar Toledo</stao:hasName>
+        <stao:hasRating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">4.3</stao:hasRating>
+        <stao:hasStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</stao:hasStars>
+        <rdfs:comment xml:lang="en">A 5-star beach hotel in Toledo from the CSV</rdfs:comment>
+        <rdfs:label xml:lang="en">Hotel_Del_Mar_Toledo</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/stao#MusicEvent -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/stao#MusicEvent"/>
+    
+
+
+    <!-- http://www.example.org/stao#Restaurante_Tradicion_Toledo -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/stao#Restaurante_Tradicion_Toledo">
+        <rdf:type rdf:resource="http://www.example.org/stao#Restaurant"/>
+        <stao:locatedIn rdf:resource="http://www.example.org/stao#Toledo"/>
+        <stao:hasName>Restaurante Tradición Toledo</stao:hasName>
+        <stao:hasRating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">3.7</stao:hasRating>
+        <rdfs:comment xml:lang="en">A restaurant in Toledo with a rating of 3.7</rdfs:comment>
+        <rdfs:label xml:lang="en">Restaurante_Tradicion_Toledo</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/stao#Toledo -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/stao#Toledo">
+        <rdf:type rdf:resource="http://www.example.org/stao#City"/>
+        <stao:hasName>Toledo</stao:hasName>
+        <stao:hasRating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">4.0</stao:hasRating>
+        <rdfs:comment xml:lang="en">The city of Toledo in Spain.</rdfs:comment>
+        <rdfs:label xml:lang="en">Toledo</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <rdf:Description rdf:about="http://www.example.org/stao#MusicEvent">
+        <rdfs:comment xml:lang="en">Music event type.</rdfs:comment>
+        <rdfs:label xml:lang="en">MusicEvent</rdfs:label>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <rdf:Description rdf:about="urn:swrl:var#h">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#res">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.example.org/stao#LowRatedRestaurant"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#res"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.example.org/stao#Restaurant"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#res"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.example.org/stao#LuxuryHotel"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#h"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.example.org/stao#Hotel"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#h"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.example.org/stao#TopHotel"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#h"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.example.org/stao#Hotel"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#h"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+

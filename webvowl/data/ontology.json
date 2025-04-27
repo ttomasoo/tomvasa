@@ -1,0 +1,1200 @@
+{
+  "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
+  "header" : {
+    "languages" : [ "en", "undefined" ],
+    "baseIris" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns", "http://www.w3.org/2000/01/rdf-schema", "http://www.w3.org/2001/XMLSchema", "http://dbpedia.org/ontology", "http://www.example.org/stao" ],
+    "iri" : "http://www.example.org/stao#SmartTourismAdvisorOntology",
+    "version" : "1.0 - 2025-04-27",
+    "author" : [ "Tomás Valero Sánchez" ],
+    "labels" : {
+      "en" : "Smart Tourism Advisor Ontology"
+    },
+    "comments" : {
+      "en" : "An ontology for representing tourism resources, events, hotels, transport, etc.",
+      "undefined" : "Smart Tourism Advisor Ontology (STAO) is an ontology designed to represent and model city tourism offerings. STAO captures information about events, hotels, attractions, transportation, and restaurants for recommendation purposes. It integrates static data, such as resource descriptions, geographic locations, categories, prices, and ratings, with dynamic information like event dates, hotel availability, public transport prices, and tourist preferences."
+    },
+    "other" : {
+      "license" : [ {
+        "identifier" : "license",
+        "language" : "undefined",
+        "value" : "https://creativecommons.org/licenses/by/4.0/",
+        "type" : "label"
+      } ],
+      "creator" : [ {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "Tomás Valero Sánchez",
+        "type" : "label"
+      } ],
+      "versionInfo" : [ {
+        "identifier" : "versionInfo",
+        "language" : "undefined",
+        "value" : "1.0 - 2025-04-27",
+        "type" : "label"
+      } ]
+    }
+  },
+  "namespace" : [ ],
+  "class" : [ {
+    "id" : "0",
+    "type" : "owl:Class"
+  }, {
+    "id" : "5",
+    "type" : "owl:Class"
+  }, {
+    "id" : "7",
+    "type" : "owl:Class"
+  }, {
+    "id" : "9",
+    "type" : "owl:Class"
+  }, {
+    "id" : "6",
+    "type" : "owl:Class"
+  }, {
+    "id" : "14",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "11",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "19",
+    "type" : "owl:Class"
+  }, {
+    "id" : "20",
+    "type" : "owl:Class"
+  }, {
+    "id" : "38",
+    "type" : "owl:Class"
+  }, {
+    "id" : "32",
+    "type" : "owl:Class"
+  }, {
+    "id" : "42",
+    "type" : "owl:Class"
+  }, {
+    "id" : "43",
+    "type" : "owl:Class"
+  }, {
+    "id" : "34",
+    "type" : "owl:Class"
+  }, {
+    "id" : "45",
+    "type" : "owl:Class"
+  }, {
+    "id" : "30",
+    "type" : "owl:Class"
+  }, {
+    "id" : "25",
+    "type" : "owl:Class"
+  }, {
+    "id" : "44",
+    "type" : "owl:Class"
+  }, {
+    "id" : "51",
+    "type" : "owl:Class"
+  }, {
+    "id" : "36",
+    "type" : "owl:Class"
+  }, {
+    "id" : "53",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "65",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "40",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "58",
+    "type" : "owl:Class"
+  }, {
+    "id" : "10",
+    "type" : "owl:Class"
+  }, {
+    "id" : "71",
+    "type" : "owl:Class"
+  }, {
+    "id" : "64",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "12",
+    "type" : "owl:Class"
+  }, {
+    "id" : "41",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "8",
+    "type" : "owl:Class"
+  }, {
+    "id" : "13",
+    "type" : "owl:Class"
+  }, {
+    "id" : "1",
+    "type" : "owl:Class"
+  }, {
+    "id" : "28",
+    "type" : "owl:Class"
+  }, {
+    "id" : "73",
+    "type" : "owl:Class"
+  }, {
+    "id" : "47",
+    "type" : "owl:Class"
+  }, {
+    "id" : "16",
+    "type" : "owl:Class"
+  }, {
+    "id" : "74",
+    "type" : "owl:Class"
+  }, {
+    "id" : "3",
+    "type" : "owl:Class"
+  }, {
+    "id" : "4",
+    "type" : "owl:Class"
+  }, {
+    "id" : "46",
+    "type" : "owl:Class"
+  }, {
+    "id" : "23",
+    "type" : "owl:Class"
+  }, {
+    "id" : "15",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "75",
+    "type" : "owl:Class"
+  }, {
+    "id" : "17",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "21",
+    "type" : "owl:Class"
+  }, {
+    "id" : "48",
+    "type" : "owl:Class"
+  } ],
+  "classAttribute" : [ {
+    "iri" : "http://www.example.org/stao#Tram",
+    "baseIri" : "http://www.example.org/stao",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Tram",
+      "en" : "Tram"
+    },
+    "comment" : {
+      "en" : "Tram transport mode."
+    },
+    "attributes" : [ "external" ],
+    "id" : "0",
+    "superClasses" : [ "1" ]
+  }, {
+    "iri" : "http://www.example.org/stao#Attraction",
+    "baseIri" : "http://www.example.org/stao",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Attraction",
+      "en" : "Attraction"
+    },
+    "individuals" : [ {
+      "iri" : "http://www.example.org/stao#Castillo_Toledo",
+      "baseIri" : "http://www.example.org/stao",
+      "comment" : {
+        "en" : "A castle attraction in Toledo"
+      },
+      "labels" : {
+        "IRI-based" : "Castillo_Toledo",
+        "en" : "Castillo_Toledo"
+      }
+    } ],
+    "comment" : {
+      "en" : "A tourist attraction (museum, monument...)."
+    },
+    "attributes" : [ "external" ],
+    "id" : "5",
+    "superClasses" : [ "6" ]
+  }, {
+    "iri" : "http://www.example.org/stao#Museum",
+    "baseIri" : "http://www.example.org/stao",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Museum",
+      "en" : "Museum"
+    },
+    "comment" : {
+      "en" : "A type of attraction: Museum."
+    },
+    "attributes" : [ "external" ],
+    "id" : "7",
+    "superClasses" : [ "8" ]
+  }, {
+    "iri" : "http://www.example.org/stao#Bicycle",
+    "baseIri" : "http://www.example.org/stao",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Bicycle",
+      "en" : "Bicycle"
+    },
+    "comment" : {
+      "en" : "Bicycle transport mode."
+    },
+    "attributes" : [ "external" ],
+    "id" : "9",
+    "superClasses" : [ "1" ]
+  }, {
+    "iri" : "http://www.example.org/stao#TourismResource",
+    "baseIri" : "http://www.example.org/stao",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "TourismResource",
+      "en" : "TourismResource"
+    },
+    "subClasses" : [ "10", "11", "5", "12", "13" ],
+    "comment" : {
+      "en" : "A general resource for tourism (e.g., hotels, restaurants...)."
+    },
+    "attributes" : [ "external" ],
+    "id" : "6"
+  }, {
+    "iri" : "http://dbpedia.org/ontology/City",
+    "equivalent" : [ "15" ],
+    "baseIri" : "http://dbpedia.org/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "City"
+    },
+    "attributes" : [ "external", "equivalent" ],
+    "id" : "14"
+  }, {
+    "iri" : "http://www.example.org/stao#Restaurant",
+    "equivalent" : [ "17" ],
+    "baseIri" : "http://www.example.org/stao",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Restaurant",
+      "en" : "Restaurant"
+    },
+    "individuals" : [ {
+      "iri" : "http://www.example.org/stao#Restaurante_Tradicion_Toledo",
+      "baseIri" : "http://www.example.org/stao",
+      "comment" : {
+        "en" : "A restaurant in Toledo with a rating of 3.7"
+      },
+      "labels" : {
+        "IRI-based" : "Restaurante_Tradicion_Toledo",
+        "en" : "Restaurante_Tradicion_Toledo"
+      }
+    } ],
+    "subClasses" : [ "16" ],
+    "comment" : {
+      "en" : "A place to eat with an average price and rating."
+    },
+    "attributes" : [ "external", "equivalent" ],
+    "id" : "11",
+    "superClasses" : [ "6" ]
+  }, {
+    "iri" : "http://www.example.org/stao#RuralHotel",
+    "baseIri" : "http://www.example.org/stao",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "RuralHotel",
+      "en" : "RuralHotel"
+    },
+    "comment" : {
+      "en" : "A hotel in a rural location."
+    },
+    "attributes" : [ "external" ],
+    "id" : "19",
+    "superClasses" : [ "4" ]
+  }, {
+    "iri" : "http://www.example.org/stao#MusicEvent",
+    "baseIri" : "http://www.example.org/stao",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "MusicEvent",
+      "en" : "MusicEvent"
+    },
+    "comment" : {
+      "en" : "Music event type."
+    },
+    "attributes" : [ "external" ],
+    "id" : "20",
+    "superClasses" : [ "21" ]
+  }, {
+    "iri" : "http://www.example.org/stao#CulturalEvent",
+    "baseIri" : "http://www.example.org/stao",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "CulturalEvent",
+      "en" : "CulturalEvent"
+    },
+    "comment" : {
+      "en" : "Cultural event type."
+    },
+    "attributes" : [ "external" ],
+    "id" : "38",
+    "superClasses" : [ "21" ]
+  }, {
+    "iri" : "http://www.example.org/stao#TopHotel",
+    "baseIri" : "http://www.example.org/stao",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "TopHotel",
+      "en" : "TopHotel"
+    },
+    "comment" : {
+      "en" : "A hotel with rating > 4.8"
+    },
+    "attributes" : [ "external" ],
+    "id" : "32",
+    "superClasses" : [ "13" ]
+  }, {
+    "iri" : "http://www.example.org/stao#Monument",
+    "baseIri" : "http://www.example.org/stao",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Monument",
+      "en" : "Monument"
+    },
+    "comment" : {
+      "en" : "A type of attraction: Monument."
+    },
+    "attributes" : [ "external" ],
+    "id" : "42",
+    "superClasses" : [ "8" ]
+  }, {
+    "iri" : "http://www.example.org/stao#CuisineType",
+    "baseIri" : "http://www.example.org/stao",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "CuisineType",
+      "en" : "CuisineType"
+    },
+    "subClasses" : [ "44", "45", "46", "47", "48" ],
+    "comment" : {
+      "en" : "Represents the cuisine type (Italian, Mexican...)."
+    },
+    "attributes" : [ "external" ],
+    "id" : "43"
+  }, {
+    "iri" : "http://www.example.org/stao#CulturalAttraction",
+    "baseIri" : "http://www.example.org/stao",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "CulturalAttraction",
+      "en" : "CulturalAttraction"
+    },
+    "comment" : {
+      "en" : "A type of attraction: Cultural place."
+    },
+    "attributes" : [ "external" ],
+    "id" : "34",
+    "superClasses" : [ "8" ]
+  }, {
+    "iri" : "http://www.example.org/stao#ItalianCuisine",
+    "baseIri" : "http://www.example.org/stao",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ItalianCuisine",
+      "en" : "ItalianCuisine"
+    },
+    "comment" : {
+      "en" : "Italian cuisine type."
+    },
+    "attributes" : [ "external" ],
+    "id" : "45",
+    "superClasses" : [ "43" ]
+  }, {
+    "iri" : "http://www.example.org/stao#Taxi",
+    "baseIri" : "http://www.example.org/stao",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Taxi",
+      "en" : "Taxi"
+    },
+    "comment" : {
+      "en" : "Taxi transport mode."
+    },
+    "attributes" : [ "external" ],
+    "id" : "30",
+    "superClasses" : [ "1" ]
+  }, {
+    "iri" : "http://www.example.org/stao#Metro",
+    "baseIri" : "http://www.example.org/stao",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Metro",
+      "en" : "Metro"
+    },
+    "comment" : {
+      "en" : "Metro transport mode."
+    },
+    "attributes" : [ "external" ],
+    "id" : "25",
+    "superClasses" : [ "1" ]
+  }, {
+    "iri" : "http://www.example.org/stao#JapaneseCuisine",
+    "baseIri" : "http://www.example.org/stao",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "JapaneseCuisine",
+      "en" : "JapaneseCuisine"
+    },
+    "comment" : {
+      "en" : "Japanese cuisine type."
+    },
+    "attributes" : [ "external" ],
+    "id" : "44",
+    "superClasses" : [ "43" ]
+  }, {
+    "iri" : "http://www.example.org/stao#Park",
+    "baseIri" : "http://www.example.org/stao",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Park",
+      "en" : "Park"
+    },
+    "comment" : {
+      "en" : "A type of attraction: Park."
+    },
+    "attributes" : [ "external" ],
+    "id" : "51",
+    "superClasses" : [ "8" ]
+  }, {
+    "iri" : "http://www.example.org/stao#Bus",
+    "baseIri" : "http://www.example.org/stao",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Bus",
+      "en" : "Bus"
+    },
+    "comment" : {
+      "en" : "Bus transport mode."
+    },
+    "attributes" : [ "external" ],
+    "id" : "36",
+    "superClasses" : [ "1" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "53",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "65",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "40",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://www.example.org/stao#Beach",
+    "baseIri" : "http://www.example.org/stao",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Beach",
+      "en" : "Beach"
+    },
+    "comment" : {
+      "en" : "A type of attraction: Beach."
+    },
+    "attributes" : [ "external" ],
+    "id" : "58",
+    "superClasses" : [ "8" ]
+  }, {
+    "iri" : "http://www.example.org/stao#TransportService",
+    "baseIri" : "http://www.example.org/stao",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "TransportService",
+      "en" : "TransportService"
+    },
+    "comment" : {
+      "en" : "A service of transport in a city (bus, metro...)."
+    },
+    "attributes" : [ "external" ],
+    "id" : "10",
+    "superClasses" : [ "6" ]
+  }, {
+    "iri" : "http://www.example.org/stao#GastronomicEvent",
+    "baseIri" : "http://www.example.org/stao",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "GastronomicEvent",
+      "en" : "GastronomicEvent"
+    },
+    "comment" : {
+      "en" : "Gastronomic event type."
+    },
+    "attributes" : [ "external" ],
+    "id" : "71",
+    "superClasses" : [ "21" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#date",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "64",
+    "label" : {
+      "IRI-based" : "date"
+    }
+  }, {
+    "iri" : "http://www.example.org/stao#Event",
+    "baseIri" : "http://www.example.org/stao",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Event",
+      "en" : "Event"
+    },
+    "individuals" : [ {
+      "iri" : "http://www.example.org/stao#Concierto_Toledo_2024_02_06",
+      "baseIri" : "http://www.example.org/stao",
+      "comment" : {
+        "en" : "Music event in Toledo on 2024-02-06"
+      },
+      "labels" : {
+        "IRI-based" : "Concierto_Toledo_2024_02_06",
+        "en" : "Concierto_Toledo_2024_02_06"
+      }
+    } ],
+    "comment" : {
+      "en" : "An event happening in the city (cultural, music...)."
+    },
+    "attributes" : [ "external" ],
+    "id" : "12",
+    "superClasses" : [ "6" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "41",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.example.org/stao#AttractionType",
+    "baseIri" : "http://www.example.org/stao",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "AttractionType",
+      "en" : "AttractionType"
+    },
+    "subClasses" : [ "58", "51", "42", "7", "34" ],
+    "comment" : {
+      "en" : "Categorizes the kind of an attraction (Museum, Monument...)."
+    },
+    "attributes" : [ "external" ],
+    "id" : "8"
+  }, {
+    "iri" : "http://www.example.org/stao#Hotel",
+    "baseIri" : "http://www.example.org/stao",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Hotel",
+      "en" : "Hotel"
+    },
+    "individuals" : [ {
+      "iri" : "http://www.example.org/stao#Hotel_Del_Mar_Toledo",
+      "baseIri" : "http://www.example.org/stao",
+      "comment" : {
+        "en" : "A 5-star beach hotel in Toledo from the CSV"
+      },
+      "labels" : {
+        "IRI-based" : "Hotel_Del_Mar_Toledo",
+        "en" : "Hotel_Del_Mar_Toledo"
+      }
+    } ],
+    "subClasses" : [ "32" ],
+    "comment" : {
+      "en" : "A hotel with stars, price, rating."
+    },
+    "attributes" : [ "external" ],
+    "id" : "13",
+    "superClasses" : [ "6" ]
+  }, {
+    "iri" : "http://www.example.org/stao#TransportMode",
+    "baseIri" : "http://www.example.org/stao",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "TransportMode",
+      "en" : "TransportMode"
+    },
+    "subClasses" : [ "0", "36", "9", "25", "30" ],
+    "comment" : {
+      "en" : "Indicates the transport mode (Bus, Metro, etc.)."
+    },
+    "attributes" : [ "external" ],
+    "id" : "1"
+  }, {
+    "iri" : "http://www.example.org/stao#Place",
+    "baseIri" : "http://www.example.org/stao",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Place",
+      "en" : "Place"
+    },
+    "subClasses" : [ "15" ],
+    "comment" : {
+      "en" : "A geographical place (e.g., city)."
+    },
+    "attributes" : [ "external" ],
+    "id" : "28"
+  }, {
+    "iri" : "http://www.example.org/stao#SportEvent",
+    "baseIri" : "http://www.example.org/stao",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "SportEvent",
+      "en" : "SportEvent"
+    },
+    "comment" : {
+      "en" : "Sport event type."
+    },
+    "attributes" : [ "external" ],
+    "id" : "73",
+    "superClasses" : [ "21" ]
+  }, {
+    "iri" : "http://www.example.org/stao#AndalusianCuisine",
+    "baseIri" : "http://www.example.org/stao",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "AndalusianCuisine",
+      "en" : "AndalusianCuisine"
+    },
+    "comment" : {
+      "en" : "Andalusian cuisine type."
+    },
+    "attributes" : [ "external" ],
+    "id" : "47",
+    "superClasses" : [ "43" ]
+  }, {
+    "iri" : "http://www.example.org/stao#LowRatedRestaurant",
+    "baseIri" : "http://www.example.org/stao",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "LowRatedRestaurant",
+      "en" : "LowRatedRestaurant"
+    },
+    "comment" : {
+      "en" : "A restaurant with rating below 3.0"
+    },
+    "attributes" : [ "external" ],
+    "id" : "16",
+    "superClasses" : [ "11" ]
+  }, {
+    "iri" : "http://www.example.org/stao#TechnologicEvent",
+    "baseIri" : "http://www.example.org/stao",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "TechnologicEvent",
+      "en" : "TechnologicEvent"
+    },
+    "comment" : {
+      "en" : "Technologic event type."
+    },
+    "attributes" : [ "external" ],
+    "id" : "74",
+    "superClasses" : [ "21" ]
+  }, {
+    "iri" : "http://www.example.org/stao#BeachHotel",
+    "baseIri" : "http://www.example.org/stao",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "BeachHotel",
+      "en" : "BeachHotel"
+    },
+    "comment" : {
+      "en" : "A hotel near or at the beach."
+    },
+    "attributes" : [ "external" ],
+    "id" : "3",
+    "superClasses" : [ "4" ]
+  }, {
+    "iri" : "http://www.example.org/stao#HotelType",
+    "baseIri" : "http://www.example.org/stao",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "HotelType",
+      "en" : "HotelType"
+    },
+    "subClasses" : [ "23", "19", "3", "75" ],
+    "comment" : {
+      "en" : "Categorizes the kind of hotel (Luxury, Beach...)."
+    },
+    "attributes" : [ "external" ],
+    "id" : "4"
+  }, {
+    "iri" : "http://www.example.org/stao#MexicanCuisine",
+    "baseIri" : "http://www.example.org/stao",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "MexicanCuisine",
+      "en" : "MexicanCuisine"
+    },
+    "comment" : {
+      "en" : "Mexican cuisine type."
+    },
+    "attributes" : [ "external" ],
+    "id" : "46",
+    "superClasses" : [ "43" ]
+  }, {
+    "iri" : "http://www.example.org/stao#BusinessHotel",
+    "baseIri" : "http://www.example.org/stao",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "BusinessHotel",
+      "en" : "BusinessHotel"
+    },
+    "comment" : {
+      "en" : "A hotel focused on business travelers."
+    },
+    "attributes" : [ "external" ],
+    "id" : "23",
+    "superClasses" : [ "4" ]
+  }, {
+    "iri" : "http://www.example.org/stao#City",
+    "equivalent" : [ "14" ],
+    "baseIri" : "http://www.example.org/stao",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "City",
+      "en" : "City"
+    },
+    "individuals" : [ {
+      "iri" : "http://www.example.org/stao#Toledo",
+      "baseIri" : "http://www.example.org/stao",
+      "comment" : {
+        "en" : "The city of Toledo in Spain."
+      },
+      "labels" : {
+        "IRI-based" : "Toledo",
+        "en" : "Toledo"
+      }
+    } ],
+    "comment" : {
+      "en" : "Represents a city in the tourism ontology."
+    },
+    "attributes" : [ "external", "equivalent" ],
+    "id" : "15",
+    "superClasses" : [ "28" ]
+  }, {
+    "iri" : "http://www.example.org/stao#LuxuryHotel",
+    "baseIri" : "http://www.example.org/stao",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "LuxuryHotel",
+      "en" : "LuxuryHotel"
+    },
+    "comment" : {
+      "en" : "A hotel that is categorized as luxury."
+    },
+    "attributes" : [ "external" ],
+    "id" : "75",
+    "superClasses" : [ "4" ]
+  }, {
+    "iri" : "http://dbpedia.org/ontology/Restaurant",
+    "equivalent" : [ "11" ],
+    "baseIri" : "http://dbpedia.org/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Restaurant"
+    },
+    "attributes" : [ "external", "equivalent" ],
+    "id" : "17"
+  }, {
+    "iri" : "http://www.example.org/stao#EventType",
+    "baseIri" : "http://www.example.org/stao",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "EventType",
+      "en" : "EventType"
+    },
+    "subClasses" : [ "38", "71", "74", "20", "73" ],
+    "comment" : {
+      "en" : "Categorizes the kind of event (Music, Cultural...)."
+    },
+    "attributes" : [ "external" ],
+    "id" : "21"
+  }, {
+    "iri" : "http://www.example.org/stao#MediterraneanCuisine",
+    "baseIri" : "http://www.example.org/stao",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "MediterraneanCuisine",
+      "en" : "MediterraneanCuisine"
+    },
+    "comment" : {
+      "en" : "Mediterranean cuisine type."
+    },
+    "attributes" : [ "external" ],
+    "id" : "48",
+    "superClasses" : [ "43" ]
+  } ],
+  "property" : [ {
+    "id" : "2",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "18",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "22",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "24",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "26",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "27",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "29",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "31",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "33",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "35",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "37",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "39",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "49",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "50",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "52",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "54",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "55",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "56",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "57",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "59",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "60",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "61",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "62",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "63",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "66",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "67",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "68",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "69",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "70",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "72",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "76",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "77",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "78",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "79",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "80",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "81",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "82",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "83",
+    "type" : "rdfs:SubClassOf"
+  } ],
+  "propertyAttribute" : [ {
+    "range" : "4",
+    "domain" : "3",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "2"
+  }, {
+    "range" : "4",
+    "domain" : "19",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "18"
+  }, {
+    "range" : "4",
+    "domain" : "23",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "22"
+  }, {
+    "range" : "1",
+    "domain" : "25",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "24"
+  }, {
+    "range" : "1",
+    "domain" : "9",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "26"
+  }, {
+    "range" : "28",
+    "domain" : "15",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "27"
+  }, {
+    "range" : "1",
+    "domain" : "30",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "29"
+  }, {
+    "range" : "13",
+    "domain" : "32",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "31"
+  }, {
+    "range" : "8",
+    "domain" : "34",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "33"
+  }, {
+    "range" : "1",
+    "domain" : "36",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "35"
+  }, {
+    "range" : "1",
+    "domain" : "0",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "37"
+  }, {
+    "iri" : "http://www.example.org/stao#hasName",
+    "baseIri" : "http://www.example.org/stao",
+    "range" : "41",
+    "label" : {
+      "IRI-based" : "hasName",
+      "en" : "hasName"
+    },
+    "domain" : "40",
+    "comment" : {
+      "en" : "A name assigned to any entity in the ontology."
+    },
+    "attributes" : [ "datatype", "external" ],
+    "id" : "39"
+  }, {
+    "range" : "8",
+    "domain" : "42",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "49"
+  }, {
+    "range" : "8",
+    "domain" : "51",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "50"
+  }, {
+    "iri" : "http://www.example.org/stao#hasRating",
+    "baseIri" : "http://www.example.org/stao",
+    "range" : "53",
+    "label" : {
+      "IRI-based" : "hasRating",
+      "en" : "hasRating"
+    },
+    "domain" : "6",
+    "comment" : {
+      "en" : "Indicates the rating of a tourism resource."
+    },
+    "attributes" : [ "datatype", "external" ],
+    "id" : "52"
+  }, {
+    "range" : "8",
+    "domain" : "7",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "54"
+  }, {
+    "range" : "43",
+    "domain" : "47",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "55"
+  }, {
+    "range" : "43",
+    "domain" : "46",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "56"
+  }, {
+    "range" : "8",
+    "domain" : "58",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "57"
+  }, {
+    "range" : "43",
+    "domain" : "48",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "59"
+  }, {
+    "range" : "11",
+    "domain" : "16",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "60"
+  }, {
+    "range" : "43",
+    "domain" : "45",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "61"
+  }, {
+    "range" : "43",
+    "domain" : "44",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "62"
+  }, {
+    "iri" : "http://www.example.org/stao#hasDate",
+    "baseIri" : "http://www.example.org/stao",
+    "range" : "64",
+    "label" : {
+      "IRI-based" : "hasDate",
+      "en" : "hasDate"
+    },
+    "cardinality" : "1",
+    "domain" : "12",
+    "comment" : {
+      "en" : "The date on which the event is held (YYYY-MM-DD)."
+    },
+    "attributes" : [ "datatype", "external" ],
+    "id" : "63"
+  }, {
+    "range" : "6",
+    "domain" : "10",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "66"
+  }, {
+    "range" : "6",
+    "domain" : "11",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "67"
+  }, {
+    "range" : "6",
+    "domain" : "5",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "68"
+  }, {
+    "range" : "6",
+    "domain" : "12",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "69"
+  }, {
+    "range" : "6",
+    "domain" : "13",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "70"
+  }, {
+    "iri" : "http://www.example.org/stao#locatedIn",
+    "baseIri" : "http://www.example.org/stao",
+    "range" : "28",
+    "label" : {
+      "IRI-based" : "locatedIn",
+      "en" : "locatedIn"
+    },
+    "domain" : "6",
+    "comment" : {
+      "en" : "Relates a tourism resource to the place where it is located."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "72"
+  }, {
+    "iri" : "http://www.example.org/stao#hasEventType",
+    "baseIri" : "http://www.example.org/stao",
+    "range" : "21",
+    "label" : {
+      "IRI-based" : "hasEventType",
+      "en" : "hasEventType"
+    },
+    "domain" : "12",
+    "comment" : {
+      "en" : "Relates an event to its event type (music, cultural, etc.)."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "76"
+  }, {
+    "range" : "21",
+    "domain" : "73",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "77"
+  }, {
+    "iri" : "http://www.example.org/stao#hasStars",
+    "baseIri" : "http://www.example.org/stao",
+    "range" : "65",
+    "label" : {
+      "IRI-based" : "hasStars",
+      "en" : "hasStars"
+    },
+    "minCardinality" : "1",
+    "domain" : "13",
+    "comment" : {
+      "en" : "Number of stars for a hotel."
+    },
+    "attributes" : [ "datatype", "external" ],
+    "id" : "78"
+  }, {
+    "range" : "21",
+    "domain" : "20",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "79"
+  }, {
+    "range" : "21",
+    "domain" : "38",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "80"
+  }, {
+    "range" : "4",
+    "domain" : "75",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "81"
+  }, {
+    "range" : "21",
+    "domain" : "74",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "82"
+  }, {
+    "range" : "21",
+    "domain" : "71",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "83"
+  } ]
+}

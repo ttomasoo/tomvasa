@@ -1,0 +1,520 @@
+@prefix : <http://www.example.org/stao#SmartTourismAdvisorOntology> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.example.org/stao#SmartTourismAdvisorOntology> .
+
+<http://www.example.org/stao#SmartTourismAdvisorOntology> rdf:type owl:Ontology ;
+                                                           <http://purl.org/dc/elements/1.1/creator> "Tomás Valero Sánchez" ;
+                                                           <http://purl.org/dc/terms/license> "https://creativecommons.org/licenses/by/4.0/" ;
+                                                           rdfs:comment "An ontology for representing tourism resources, events, hotels, transport, etc."@en ,
+                                                                        "Smart Tourism Advisor Ontology (STAO) is an ontology designed to represent and model city tourism offerings. STAO captures information about events, hotels, attractions, transportation, and restaurants for recommendation purposes. It integrates static data, such as resource descriptions, geographic locations, categories, prices, and ratings, with dynamic information like event dates, hotel availability, public transport prices, and tourist preferences." ;
+                                                           rdfs:label "Smart Tourism Advisor Ontology"@en ;
+                                                           owl:versionInfo "1.0 - 2025-04-27" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.example.org/stao#hasEventType
+<http://www.example.org/stao#hasEventType> rdf:type owl:ObjectProperty ;
+                                           rdfs:domain <http://www.example.org/stao#Event> ;
+                                           rdfs:range <http://www.example.org/stao#EventType> ;
+                                           rdfs:comment "Relates an event to its event type (music, cultural, etc.)."@en ;
+                                           rdfs:label "hasEventType"@en .
+
+
+###  http://www.example.org/stao#locatedIn
+<http://www.example.org/stao#locatedIn> rdf:type owl:ObjectProperty ;
+                                        rdfs:domain <http://www.example.org/stao#TourismResource> ;
+                                        rdfs:range <http://www.example.org/stao#Place> ;
+                                        rdfs:comment "Relates a tourism resource to the place where it is located."@en ;
+                                        rdfs:label "locatedIn"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.example.org/stao#hasDate
+<http://www.example.org/stao#hasDate> rdf:type owl:DatatypeProperty ;
+                                      rdfs:domain <http://www.example.org/stao#Event> ;
+                                      rdfs:range xsd:date ;
+                                      rdfs:comment "The date on which the event is held (YYYY-MM-DD)."@en ;
+                                      rdfs:label "hasDate"@en .
+
+
+###  http://www.example.org/stao#hasName
+<http://www.example.org/stao#hasName> rdf:type owl:DatatypeProperty ;
+                                      rdfs:domain owl:Thing ;
+                                      rdfs:range xsd:string ;
+                                      rdfs:comment "A name assigned to any entity in the ontology."@en ;
+                                      rdfs:label "hasName"@en .
+
+
+###  http://www.example.org/stao#hasRating
+<http://www.example.org/stao#hasRating> rdf:type owl:DatatypeProperty ;
+                                        rdfs:domain <http://www.example.org/stao#TourismResource> ;
+                                        rdfs:range xsd:float ;
+                                        rdfs:comment "Indicates the rating of a tourism resource."@en ;
+                                        rdfs:label "hasRating"@en .
+
+
+###  http://www.example.org/stao#hasStars
+<http://www.example.org/stao#hasStars> rdf:type owl:DatatypeProperty ;
+                                       rdfs:domain <http://www.example.org/stao#Hotel> ;
+                                       rdfs:range xsd:integer ;
+                                       rdfs:comment "Number of stars for a hotel."@en ;
+                                       rdfs:label "hasStars"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://dbpedia.org/ontology/City
+<http://dbpedia.org/ontology/City> rdf:type owl:Class ;
+                                   owl:equivalentClass <http://www.example.org/stao#City> .
+
+
+###  http://dbpedia.org/ontology/Restaurant
+<http://dbpedia.org/ontology/Restaurant> rdf:type owl:Class ;
+                                         owl:equivalentClass <http://www.example.org/stao#Restaurant> .
+
+
+###  http://www.example.org/stao#AndalusianCuisine
+<http://www.example.org/stao#AndalusianCuisine> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://www.example.org/stao#CuisineType> ;
+                                                rdfs:comment "Andalusian cuisine type."@en ;
+                                                rdfs:label "AndalusianCuisine"@en .
+
+
+###  http://www.example.org/stao#Attraction
+<http://www.example.org/stao#Attraction> rdf:type owl:Class ;
+                                         rdfs:subClassOf <http://www.example.org/stao#TourismResource> ;
+                                         rdfs:comment "A tourist attraction (museum, monument...)."@en ;
+                                         rdfs:label "Attraction"@en .
+
+
+###  http://www.example.org/stao#AttractionType
+<http://www.example.org/stao#AttractionType> rdf:type owl:Class ;
+                                             rdfs:subClassOf owl:Thing ;
+                                             rdfs:comment "Categorizes the kind of an attraction (Museum, Monument...)."@en ;
+                                             rdfs:label "AttractionType"@en .
+
+
+###  http://www.example.org/stao#Beach
+<http://www.example.org/stao#Beach> rdf:type owl:Class ;
+                                    rdfs:subClassOf <http://www.example.org/stao#AttractionType> ;
+                                    rdfs:comment "A type of attraction: Beach."@en ;
+                                    rdfs:label "Beach"@en .
+
+
+###  http://www.example.org/stao#BeachHotel
+<http://www.example.org/stao#BeachHotel> rdf:type owl:Class ;
+                                         rdfs:subClassOf <http://www.example.org/stao#HotelType> ;
+                                         rdfs:comment "A hotel near or at the beach."@en ;
+                                         rdfs:label "BeachHotel"@en .
+
+
+###  http://www.example.org/stao#Bicycle
+<http://www.example.org/stao#Bicycle> rdf:type owl:Class ;
+                                      rdfs:subClassOf <http://www.example.org/stao#TransportMode> ;
+                                      rdfs:comment "Bicycle transport mode."@en ;
+                                      rdfs:label "Bicycle"@en .
+
+
+###  http://www.example.org/stao#Bus
+<http://www.example.org/stao#Bus> rdf:type owl:Class ;
+                                  rdfs:subClassOf <http://www.example.org/stao#TransportMode> ;
+                                  rdfs:comment "Bus transport mode."@en ;
+                                  rdfs:label "Bus"@en .
+
+
+###  http://www.example.org/stao#BusinessHotel
+<http://www.example.org/stao#BusinessHotel> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://www.example.org/stao#HotelType> ;
+                                            rdfs:comment "A hotel focused on business travelers."@en ;
+                                            rdfs:label "BusinessHotel"@en .
+
+
+###  http://www.example.org/stao#City
+<http://www.example.org/stao#City> rdf:type owl:Class ;
+                                   rdfs:subClassOf <http://www.example.org/stao#Place> ;
+                                   rdfs:comment "Represents a city in the tourism ontology."@en ;
+                                   rdfs:label "City"@en .
+
+
+###  http://www.example.org/stao#CuisineType
+<http://www.example.org/stao#CuisineType> rdf:type owl:Class ;
+                                          rdfs:subClassOf owl:Thing ;
+                                          rdfs:comment "Represents the cuisine type (Italian, Mexican...)."@en ;
+                                          rdfs:label "CuisineType"@en .
+
+
+###  http://www.example.org/stao#CulturalAttraction
+<http://www.example.org/stao#CulturalAttraction> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.example.org/stao#AttractionType> ;
+                                                 rdfs:comment "A type of attraction: Cultural place."@en ;
+                                                 rdfs:label "CulturalAttraction"@en .
+
+
+###  http://www.example.org/stao#CulturalEvent
+<http://www.example.org/stao#CulturalEvent> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://www.example.org/stao#EventType> ;
+                                            rdfs:comment "Cultural event type."@en ;
+                                            rdfs:label "CulturalEvent"@en .
+
+
+###  http://www.example.org/stao#Event
+<http://www.example.org/stao#Event> rdf:type owl:Class ;
+                                    rdfs:subClassOf <http://www.example.org/stao#TourismResource> ,
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty <http://www.example.org/stao#hasDate> ;
+                                                      owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                    ] ;
+                                    rdfs:comment "An event happening in the city (cultural, music...)."@en ;
+                                    rdfs:label "Event"@en .
+
+
+###  http://www.example.org/stao#EventType
+<http://www.example.org/stao#EventType> rdf:type owl:Class ;
+                                        rdfs:subClassOf owl:Thing ;
+                                        rdfs:comment "Categorizes the kind of event (Music, Cultural...)."@en ;
+                                        rdfs:label "EventType"@en .
+
+
+###  http://www.example.org/stao#GastronomicEvent
+<http://www.example.org/stao#GastronomicEvent> rdf:type owl:Class ;
+                                               rdfs:subClassOf <http://www.example.org/stao#EventType> ;
+                                               rdfs:comment "Gastronomic event type."@en ;
+                                               rdfs:label "GastronomicEvent"@en .
+
+
+###  http://www.example.org/stao#Hotel
+<http://www.example.org/stao#Hotel> rdf:type owl:Class ;
+                                    rdfs:subClassOf <http://www.example.org/stao#TourismResource> ,
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty <http://www.example.org/stao#hasStars> ;
+                                                      owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                    ] ;
+                                    rdfs:comment "A hotel with stars, price, rating."@en ;
+                                    rdfs:label "Hotel"@en .
+
+
+###  http://www.example.org/stao#HotelType
+<http://www.example.org/stao#HotelType> rdf:type owl:Class ;
+                                        rdfs:subClassOf owl:Thing ;
+                                        rdfs:comment "Categorizes the kind of hotel (Luxury, Beach...)."@en ;
+                                        rdfs:label "HotelType"@en .
+
+
+###  http://www.example.org/stao#ItalianCuisine
+<http://www.example.org/stao#ItalianCuisine> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://www.example.org/stao#CuisineType> ;
+                                             rdfs:comment "Italian cuisine type."@en ;
+                                             rdfs:label "ItalianCuisine"@en .
+
+
+###  http://www.example.org/stao#JapaneseCuisine
+<http://www.example.org/stao#JapaneseCuisine> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://www.example.org/stao#CuisineType> ;
+                                              rdfs:comment "Japanese cuisine type."@en ;
+                                              rdfs:label "JapaneseCuisine"@en .
+
+
+###  http://www.example.org/stao#LowRatedRestaurant
+<http://www.example.org/stao#LowRatedRestaurant> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.example.org/stao#Restaurant> ;
+                                                 rdfs:comment "A restaurant with rating below 3.0"@en ;
+                                                 rdfs:label "LowRatedRestaurant"@en .
+
+
+###  http://www.example.org/stao#LuxuryHotel
+<http://www.example.org/stao#LuxuryHotel> rdf:type owl:Class ;
+                                          rdfs:subClassOf <http://www.example.org/stao#HotelType> ;
+                                          rdfs:comment "A hotel that is categorized as luxury."@en ;
+                                          rdfs:label "LuxuryHotel"@en .
+
+
+###  http://www.example.org/stao#MediterraneanCuisine
+<http://www.example.org/stao#MediterraneanCuisine> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <http://www.example.org/stao#CuisineType> ;
+                                                   rdfs:comment "Mediterranean cuisine type."@en ;
+                                                   rdfs:label "MediterraneanCuisine"@en .
+
+
+###  http://www.example.org/stao#Metro
+<http://www.example.org/stao#Metro> rdf:type owl:Class ;
+                                    rdfs:subClassOf <http://www.example.org/stao#TransportMode> ;
+                                    rdfs:comment "Metro transport mode."@en ;
+                                    rdfs:label "Metro"@en .
+
+
+###  http://www.example.org/stao#MexicanCuisine
+<http://www.example.org/stao#MexicanCuisine> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://www.example.org/stao#CuisineType> ;
+                                             rdfs:comment "Mexican cuisine type."@en ;
+                                             rdfs:label "MexicanCuisine"@en .
+
+
+###  http://www.example.org/stao#Monument
+<http://www.example.org/stao#Monument> rdf:type owl:Class ;
+                                       rdfs:subClassOf <http://www.example.org/stao#AttractionType> ;
+                                       rdfs:comment "A type of attraction: Monument."@en ;
+                                       rdfs:label "Monument"@en .
+
+
+###  http://www.example.org/stao#Museum
+<http://www.example.org/stao#Museum> rdf:type owl:Class ;
+                                     rdfs:subClassOf <http://www.example.org/stao#AttractionType> ;
+                                     rdfs:comment "A type of attraction: Museum."@en ;
+                                     rdfs:label "Museum"@en .
+
+
+###  http://www.example.org/stao#MusicEvent
+<http://www.example.org/stao#MusicEvent> rdf:type owl:Class ;
+                                         rdfs:subClassOf <http://www.example.org/stao#EventType> .
+
+
+###  http://www.example.org/stao#Park
+<http://www.example.org/stao#Park> rdf:type owl:Class ;
+                                   rdfs:subClassOf <http://www.example.org/stao#AttractionType> ;
+                                   rdfs:comment "A type of attraction: Park."@en ;
+                                   rdfs:label "Park"@en .
+
+
+###  http://www.example.org/stao#Place
+<http://www.example.org/stao#Place> rdf:type owl:Class ;
+                                    rdfs:subClassOf owl:Thing ;
+                                    rdfs:comment "A geographical place (e.g., city)."@en ;
+                                    rdfs:label "Place"@en .
+
+
+###  http://www.example.org/stao#Restaurant
+<http://www.example.org/stao#Restaurant> rdf:type owl:Class ;
+                                         rdfs:subClassOf <http://www.example.org/stao#TourismResource> ;
+                                         rdfs:comment "A place to eat with an average price and rating."@en ;
+                                         rdfs:label "Restaurant"@en .
+
+
+###  http://www.example.org/stao#RuralHotel
+<http://www.example.org/stao#RuralHotel> rdf:type owl:Class ;
+                                         rdfs:subClassOf <http://www.example.org/stao#HotelType> ;
+                                         rdfs:comment "A hotel in a rural location."@en ;
+                                         rdfs:label "RuralHotel"@en .
+
+
+###  http://www.example.org/stao#SportEvent
+<http://www.example.org/stao#SportEvent> rdf:type owl:Class ;
+                                         rdfs:subClassOf <http://www.example.org/stao#EventType> ;
+                                         rdfs:comment "Sport event type."@en ;
+                                         rdfs:label "SportEvent"@en .
+
+
+###  http://www.example.org/stao#Taxi
+<http://www.example.org/stao#Taxi> rdf:type owl:Class ;
+                                   rdfs:subClassOf <http://www.example.org/stao#TransportMode> ;
+                                   rdfs:comment "Taxi transport mode."@en ;
+                                   rdfs:label "Taxi"@en .
+
+
+###  http://www.example.org/stao#TechnologicEvent
+<http://www.example.org/stao#TechnologicEvent> rdf:type owl:Class ;
+                                               rdfs:subClassOf <http://www.example.org/stao#EventType> ;
+                                               rdfs:comment "Technologic event type."@en ;
+                                               rdfs:label "TechnologicEvent"@en .
+
+
+###  http://www.example.org/stao#TopHotel
+<http://www.example.org/stao#TopHotel> rdf:type owl:Class ;
+                                       rdfs:subClassOf <http://www.example.org/stao#Hotel> ;
+                                       rdfs:comment "A hotel with rating > 4.8"@en ;
+                                       rdfs:label "TopHotel"@en .
+
+
+###  http://www.example.org/stao#TourismResource
+<http://www.example.org/stao#TourismResource> rdf:type owl:Class ;
+                                              rdfs:subClassOf owl:Thing ;
+                                              rdfs:comment "A general resource for tourism (e.g., hotels, restaurants...)."@en ;
+                                              rdfs:label "TourismResource"@en .
+
+
+###  http://www.example.org/stao#Tram
+<http://www.example.org/stao#Tram> rdf:type owl:Class ;
+                                   rdfs:subClassOf <http://www.example.org/stao#TransportMode> ;
+                                   rdfs:comment "Tram transport mode."@en ;
+                                   rdfs:label "Tram"@en .
+
+
+###  http://www.example.org/stao#TransportMode
+<http://www.example.org/stao#TransportMode> rdf:type owl:Class ;
+                                            rdfs:subClassOf owl:Thing ;
+                                            rdfs:comment "Indicates the transport mode (Bus, Metro, etc.)."@en ;
+                                            rdfs:label "TransportMode"@en .
+
+
+###  http://www.example.org/stao#TransportService
+<http://www.example.org/stao#TransportService> rdf:type owl:Class ;
+                                               rdfs:subClassOf <http://www.example.org/stao#TourismResource> ;
+                                               rdfs:comment "A service of transport in a city (bus, metro...)."@en ;
+                                               rdfs:label "TransportService"@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://dbpedia.org/resource/Toledo
+<http://dbpedia.org/resource/Toledo> rdf:type owl:NamedIndividual ;
+                                     owl:sameAs <http://www.example.org/stao#Toledo> .
+
+
+###  http://www.example.org/stao#Toledo
+
+###  http://www.example.org/stao#Castillo_Toledo
+<http://www.example.org/stao#Castillo_Toledo> rdf:type owl:NamedIndividual ,
+                                                       <http://www.example.org/stao#Attraction> ;
+                                              <http://www.example.org/stao#locatedIn> <http://www.example.org/stao#Toledo> ;
+                                              <http://www.example.org/stao#hasName> "Castillo Toledo" ;
+                                              <http://www.example.org/stao#hasRating> "3.7"^^xsd:float ;
+                                              rdfs:comment "A castle attraction in Toledo"@en ;
+                                              rdfs:label "Castillo_Toledo"@en .
+
+
+###  http://www.example.org/stao#Concierto_Toledo_2024_02_06
+<http://www.example.org/stao#Concierto_Toledo_2024_02_06> rdf:type owl:NamedIndividual ,
+                                                                   <http://www.example.org/stao#Event> ;
+                                                          <http://www.example.org/stao#hasEventType> <http://www.example.org/stao#MusicEvent> ;
+                                                          <http://www.example.org/stao#locatedIn> <http://www.example.org/stao#Toledo> ;
+                                                          <http://www.example.org/stao#hasDate> "2024-02-06"^^xsd:date ;
+                                                          <http://www.example.org/stao#hasName> "Concierto Toledo" ;
+                                                          <http://www.example.org/stao#hasRating> "4.8"^^xsd:float ;
+                                                          rdfs:comment "Music event in Toledo on 2024-02-06"@en ;
+                                                          rdfs:label "Concierto_Toledo_2024_02_06"@en .
+
+
+###  http://www.example.org/stao#Hotel_Del_Mar_Toledo
+<http://www.example.org/stao#Hotel_Del_Mar_Toledo> rdf:type owl:NamedIndividual ,
+                                                            <http://www.example.org/stao#Hotel> ;
+                                                   <http://www.example.org/stao#locatedIn> <http://www.example.org/stao#Toledo> ;
+                                                   <http://www.example.org/stao#hasName> "Hotel Del Mar Toledo" ;
+                                                   <http://www.example.org/stao#hasRating> "4.3"^^xsd:float ;
+                                                   <http://www.example.org/stao#hasStars> 5 ;
+                                                   rdfs:comment "A 5-star beach hotel in Toledo from the CSV"@en ;
+                                                   rdfs:label "Hotel_Del_Mar_Toledo"@en .
+
+
+###  http://www.example.org/stao#MusicEvent
+<http://www.example.org/stao#MusicEvent> rdf:type owl:NamedIndividual .
+
+
+###  http://www.example.org/stao#Restaurante_Tradicion_Toledo
+<http://www.example.org/stao#Restaurante_Tradicion_Toledo> rdf:type owl:NamedIndividual ,
+                                                                    <http://www.example.org/stao#Restaurant> ;
+                                                           <http://www.example.org/stao#locatedIn> <http://www.example.org/stao#Toledo> ;
+                                                           <http://www.example.org/stao#hasName> "Restaurante Tradición Toledo" ;
+                                                           <http://www.example.org/stao#hasRating> "3.7"^^xsd:float ;
+                                                           rdfs:comment "A restaurant in Toledo with a rating of 3.7"@en ;
+                                                           rdfs:label "Restaurante_Tradicion_Toledo"@en .
+
+
+###  http://www.example.org/stao#Toledo
+<http://www.example.org/stao#Toledo> rdf:type owl:NamedIndividual ,
+                                              <http://www.example.org/stao#City> ;
+                                     <http://www.example.org/stao#hasName> "Toledo" ;
+                                     <http://www.example.org/stao#hasRating> "4.0"^^xsd:float ;
+                                     rdfs:comment "The city of Toledo in Spain."@en ;
+                                     rdfs:label "Toledo"@en .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+<http://www.example.org/stao#MusicEvent> rdfs:comment "Music event type."@en ;
+                                         rdfs:label "MusicEvent"@en .
+
+
+#################################################################
+#    Rules
+#################################################################
+
+<urn:swrl:var#h> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<urn:swrl:var#res> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.example.org/stao#LowRatedRestaurant> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#res>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.example.org/stao#Restaurant> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#res>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.example.org/stao#LuxuryHotel> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#h>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.example.org/stao#Hotel> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#h>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.example.org/stao#TopHotel> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#h>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.example.org/stao#Hotel> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#h>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
